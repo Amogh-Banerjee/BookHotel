@@ -1,0 +1,50 @@
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login to BookHotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="mobileNumber">+91</label>
+
+            <!-- <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" class="mobile-input" [(ngModel)]="mobileNumber" required pattern="^[6-9]\d{9}$" #mobileNumberInput="ngModel"/> -->
+            <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" class="mobile-input" required
+              pattern="^[6-9]\d{9}$" />
+
+
+            <!-- <div *ngIf="mobileNumberInput.invalid && mobileNumberInput.touched" class="error-message">
+                  <small *ngIf="mobileNumberInput.errors?.['required']" >Mobile number is required. </small>
+                  <small *ngIf="mobileNumberInput.errors?.['pattern']" >Invalid Mobile number. </small>
+  
+              </div> -->
+          </div>
+
+          <!-- <button type="submit" class="continue-button" [disabled]="loginForm.invalid">Continue</button> -->
+          <button type="submit" class="continue-button">Continue</button>
+
+        </form>
+        <div class="other-login-options">
+          <p>Other login options </p>
+          <button class="login-button google-login">
+            <img src="../../../assets/Social_Media_Icons/google-logo.png" alt="Google-Logo /">
+            Login with Google
+          </button>
+          <button class="login-button facebook-login">
+            <img src="../../../assets/Social_Media_Icons/facebook-logo.png " alt="Facebook-Logo /">
+            Login with Facebook
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer mb-3 d-flex justify-content-center">
+        <p class="terms">By proceeding, you agree to our
+          <a href="#">T&C</a> and
+          <a href="#">Privacy policy</a>
+        </p>      
+      </div>
+    </div>
+  </div>
+</div>
