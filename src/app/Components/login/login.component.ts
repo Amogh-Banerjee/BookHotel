@@ -7,32 +7,20 @@ declare var bootstrap: any; // Declare bootstrap as global
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent  {
+export class LoginComponent {
 
-  
+  mobileNumber: string = '';
 
+  onSubmit(form: any) {
+    if (form.valid) {
+      // Proceed with form submission or further logic
+      console.log('Mobile number is valid:', this.mobileNumber);
+    }
+  }
 
+  constructor() { }
 
-  mobileNumber:string='';
-  
-onSubmit(){
-  if(this.isValidMobileNumber(this.mobileNumber)){
-
- 
-  console.log("Mobile Number entered successfully.",this.mobileNumber);
-
-}
-else{
-  console.log('Invalid mobile number:',this.mobileNumber);
-}
-}
-isValidMobileNumber(mobile:string):boolean {
-  const mobilePattern = /^[6-9]\d{9}$/;
-  return mobilePattern.test(mobile);
-}
-  // constructor() { }
-
-  // ngOnInit(): void {
-  // }
+  ngOnInit(): void {
+  }
 
 }

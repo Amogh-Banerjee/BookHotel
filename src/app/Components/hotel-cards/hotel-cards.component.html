@@ -1,0 +1,31 @@
+<div class="container mt-4" *ngFor="let card of hotelcards">
+    <div class="card hotel-card mb-4 shadow-lg">
+        <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <img src={{card.imgpath}} class="img-fluid hotel-image" alt="Hotel Image">                
+            </div>
+            
+            <!-- Details Section -->
+            <div class="col-md-5">
+                <div class="card-body">
+                    <h5 class="card-title">{{card.title}} <span class="rating">{{card.rating}}</span></h5>
+                    <p class="card-text location">{{card.location}}</p>
+                    <p class="card-text rating-score"><span class="score">{{card.score.scorenum}}</span> {{card.score.scoreDesc}} • {{card.score.n_ratings}} Ratings</p>
+                    <ul class="list-unstyled amenities" *ngFor="let amenity of card.amenities">
+                        <li>{{amenity}}</li>                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Price and Booking Section -->
+            <div class="col-md-3 text-center d-flex flex-column justify-content-center">
+                <div class="card-body">
+                    <p class="price">₹{{card.price}}</p>
+                    <p class="taxes"> + ₹{{card.taxes}} taxes & fees per night, per room</p>
+                    <a href="#" class="btn btn-warning">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

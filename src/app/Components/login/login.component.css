@@ -1,12 +1,15 @@
 /* Container for the login box */
 .login-container {
-  width: 320px; /* Adjust the width to fit your desired size */
-  margin: 50px auto; /* Center the box horizontally and add some top margin */
+  width: 320px;
+  /* Adjust the width to fit your desired size */
+  margin: 50px auto;
+  /* Center the box horizontally and add some top margin */
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff; /* White background for contrast */
+  background-color: #fff;
+  /* White background for contrast */
 }
 
 /* Header styling */
@@ -23,6 +26,7 @@ h2 {
   align-items: center;
   margin-bottom: 15px;
 }
+
 
 /* Label styling */
 label {
@@ -51,7 +55,15 @@ label {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 15px;
+  transition: background-color 0.3s ease;
 }
+
+.continue-button:disabled {
+  background-color: lightblue;
+  cursor: not-allowed;
+  color: #666666;
+}
+
 
 .continue-button:hover {
   background-color: #0056b3;

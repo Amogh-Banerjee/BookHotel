@@ -7,24 +7,22 @@
       </div>
       <div class="modal-body">
 
-        <form (ngSubmit)="onSubmit()">
+        <form #mobileForm="ngForm" (ngSubmit)="onSubmit(mobileForm)">
           <div class="form-group">
+
             <label for="mobileNumber">+91</label>
+            <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" class="mobile-input"
+              name="mobileNumber" [(ngModel)]="mobileNumber" #mobileNumberInput="ngModel" required
+              pattern="^[6-9][0-9]{9}$">
 
-            <!-- <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" class="mobile-input" [(ngModel)]="mobileNumber" required pattern="^[6-9]\d{9}$" #mobileNumberInput="ngModel"/> -->
-            <input type="text" id="mobileNumber" placeholder="Enter Mobile Number" class="mobile-input" required
-              pattern="^[6-9]\d{9}$" />
-
-
-            <!-- <div *ngIf="mobileNumberInput.invalid && mobileNumberInput.touched" class="error-message">
-                  <small *ngIf="mobileNumberInput.errors?.['required']" >Mobile number is required. </small>
-                  <small *ngIf="mobileNumberInput.errors?.['pattern']" >Invalid Mobile number. </small>
-  
-              </div> -->
           </div>
 
-          <!-- <button type="submit" class="continue-button" [disabled]="loginForm.invalid">Continue</button> -->
-          <button type="submit" class="continue-button">Continue</button>
+          <!-- Error Message -->
+          <div *ngIf="mobileNumberInput.invalid && mobileNumberInput.touched" class="text-danger mb-2">
+            Please enter a valid mobile number.
+          </div>
+
+          <button type="submit" class="continue-button" [disabled]="mobileForm.invalid">Continue</button>
 
         </form>
         <div class="other-login-options">
@@ -43,7 +41,7 @@
         <p class="terms">By proceeding, you agree to our
           <a href="#">T&C</a> and
           <a href="#">Privacy policy</a>
-        </p>      
+        </p>
       </div>
     </div>
   </div>
