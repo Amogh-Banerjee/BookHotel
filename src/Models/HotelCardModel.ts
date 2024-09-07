@@ -9,6 +9,9 @@ export interface HotelCard {
     amenities: string[];
     price: number;
     taxes: number;
+    availableFromMonth: number;
+    availableUntilMonth: number;
+    n_rooms: number;
   }
 
   export interface Score{

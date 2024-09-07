@@ -1,3 +1,8 @@
+#hotelCardContainer{
+    margin-right: 50px; /* Ensure uniform margin */
+}
+
+
 .hotel-card {
     border: none;
     border-radius: 10px;

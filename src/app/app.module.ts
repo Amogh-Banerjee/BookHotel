@@ -8,13 +8,21 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { HotelCardsComponent } from './Components/hotel-cards/hotel-cards.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LayoutComponent } from './Components/layout/layout.component';
+import { HotelDescriptionComponent } from './Components/hotel-description/hotel-description.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    HotelCardsComponent
+    HotelCardsComponent,
+    LayoutComponent,
+    HotelDescriptionComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
