@@ -12,6 +12,9 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { HotelDescriptionComponent } from './Components/hotel-description/hotel-description.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
+import { PaymentFormComponent } from './Components/PaymentComponents/payment-form/payment-form.component';
+import { PaymentOptionComponent } from './Components/PaymentComponents/payment-option/payment-option.component';
+import { PaymentConfirmedComponent } from './Components/PaymentComponents/payment-confirmed/payment-confirmed.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
     LayoutComponent,
     HotelDescriptionComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PaymentFormComponent,
+    PaymentOptionComponent,
+    PaymentConfirmedComponent
   ],
   imports: [
     BrowserModule,

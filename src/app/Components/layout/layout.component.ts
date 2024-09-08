@@ -141,6 +141,9 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.homeClicked = false;
     this.displaySevice.cardBookNowClicked = false;
 
+    this.displaySevice.n_days = this.calculateDaysBetweenDates(this.checkInDate, this.checkOutDate);
+    this.displaySevice.nRoomsBooked = this.rooms;
+
     this.hoteldetailsservice.initializeHotels(this.destination, this.checkInDate, this.checkOutDate);
 
     // Subscribe to the shared boolean value
@@ -199,5 +202,22 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.showAboutUs = false;
     this.displaySevice.showContactUs = true;
   }
+
+  // Calculate number of days
+
+  calculateDaysBetweenDates(startDateStr: string, endDateStr: string): number {
+    // Convert string dates to Date objects
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
+  
+    // Calculate the difference in milliseconds
+    const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
+  
+    // Convert milliseconds to days
+    const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+  
+    return differenceInDays;
+  }
+  
 
 }

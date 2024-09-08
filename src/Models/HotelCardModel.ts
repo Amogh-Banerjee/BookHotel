@@ -12,6 +12,7 @@ export interface HotelCard {
     availableFromMonth: number;
     availableUntilMonth: number;
     n_rooms: number;
+    description: string;
   }
 
   export interface Score{
