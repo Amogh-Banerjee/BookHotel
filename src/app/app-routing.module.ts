@@ -11,9 +11,9 @@ import { CanActivateGuard } from './guards/can-activate.guard';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 
 const routes: Routes = [
-  { path: 'paymentform', component: PaymentFormComponent},
-  { path: 'paymentoption', component: PaymentOptionComponent},
-  { path: 'paymentconfirmed', component: PaymentConfirmedComponent },
+  { path: 'paymentform', component: PaymentFormComponent, canDeactivate: [CanDeactivateGuard]},
+  { path: 'paymentoption', component: PaymentOptionComponent, canDeactivate: [CanDeactivateGuard]},
+  { path: 'paymentconfirmed', component: PaymentConfirmedComponent, canDeactivate: [CanDeactivateGuard] },
   // {path: 'bookhotel', component: LayoutComponent},
   {path: 'hoteldesc', component: HotelDescriptionComponent},
   // { path: '', redirectTo: '/bookhotel', pathMatch: 'full' } // Default route
