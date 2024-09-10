@@ -13,23 +13,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#"
-                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                    <a class="nav-link" aria-current="page" 
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; cursor: pointer;"
                         (click)="onHomeClick()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#"
-                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" (click)="onAboutClick()">About</a>
+                    <a class="nav-link" aria-current="page" 
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; cursor: pointer;" (click)="onAboutClick()">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#"
-                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" (click)="onContactUsClick()">Contact Us</a>
+                    <a class="nav-link" aria-current="page" 
+                        style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; cursor: pointer;" (click)="onContactUsClick()">Contact Us</a>
                 </li>
             </ul>
-            <a *ngIf="displaySevice.isLoggedIn" class="navbar-brand">
-                <img src="../../../assets/Icons/account.png" alt="Account" width="30" height="32"
-                    class="d-inline-block">
-            </a>
+            
+            <div *ngIf="displaySevice.isLoggedIn" class="dropdown">
+                <a class="navbar-brand" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../../../assets/Icons/account.png" alt="Account" width="30" height="32" class="d-inline-block" style="cursor: pointer;">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li>
+                        <a class="dropdown-item" style="cursor: pointer;" (click)="onMyBookingsClick()">My Bookings</a>
+                    </li>
+                </ul>
+            </div>
+            
 
             <!-- Add the login modal -->
             <app-login></app-login>
@@ -37,7 +45,7 @@
                 style="font-family: cursive;" data-bs-toggle="modal" data-bs-target="#loginOrSignupModal">Log in/Sign
                 up</button>
 
-            <a *ngIf="displaySevice.isLoggedIn" class="navbar-brand h1 fw-bold" href="#"
+            <a *ngIf="displaySevice.isLoggedIn" class="navbar-brand h1 fw-bold"
                 style="font-family:cursive; color: darkgreen;">Hello {{displaySevice.currentUser}}!</a>
             <button *ngIf="displaySevice.isLoggedIn" class="btn btn-outline-danger" type="button"
                 style="font-family: cursive;" (click)="logOut()">Log out</button>
@@ -137,6 +145,8 @@
 
 <app-about-us *ngIf="displaySevice.showAboutUs"></app-about-us>
 <app-contact-us *ngIf="displaySevice.showContactUs"></app-contact-us>
+
+<app-my-bookings *ngIf="displaySevice.myBookingsClicked"></app-my-bookings>
 
 <!-- Footer -->
 <footer *ngIf="displaySevice.showFooter" class="d-flex align-items-center" style="background-color: #333; color: #fff; padding: 1%;  width: 100%;">

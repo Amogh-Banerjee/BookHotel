@@ -29,8 +29,14 @@ export class UserService {
       .pipe(map(response => response.maxId));
   }
 
+  // Get username by mobile number
   getUsernameByMobileNumber(mobile_number: string): Observable<{ username: string }> {
     return this.http.get<{ username: string }>(`${this.apiUrl}/username`, { params: { mobile_number } });
+  }
+
+  // Get user ID by mobile number
+  getUserByMobile(mobile_number: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getByMobile?mobile_number=${mobile_number}`);
   }
 
 }

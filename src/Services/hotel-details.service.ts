@@ -32,6 +32,10 @@ export class HotelDetailsService {
     return this.http.get<HotelCard[]>(this.hotelreq);
   }
 
+  getHotelById(id: number): Observable<HotelCard> {
+    return this.http.get<HotelCard>(`${this.hotelreq}/${id}`);
+  }
+
   searchHotels(destination: string, checkInDate: string, checkOutDate: string) {
     const params = new HttpParams()
         .set('destination', destination)

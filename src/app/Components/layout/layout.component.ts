@@ -141,6 +141,9 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.homeClicked = false;
     this.displaySevice.cardBookNowClicked = false;
 
+    this.displaySevice.n_guests = this.totalGuests;
+    this.displaySevice.checkInDate = this.checkInDate;
+    this.displaySevice.checkOutDate = this.checkOutDate;
     this.displaySevice.n_days = this.calculateDaysBetweenDates(this.checkInDate, this.checkOutDate);
     this.displaySevice.nRoomsBooked = this.rooms;
 
@@ -172,6 +175,7 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.cardBookNowClicked = false;
     this.displaySevice.homeClicked = true;
     this.displaySevice.showSearchBar = true;
+    this.displaySevice.myBookingsClicked = false;
   }
 
   // Log out
@@ -180,7 +184,9 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.isLoggedIn = false;
     this.displaySevice.searchClicked = false;
     this.displaySevice.cardBookNowClicked = false;
+    this.displaySevice.myBookingsClicked = false;
     this.displaySevice.homeClicked = true;
+    this.displaySevice.showSearchBar = true;
   }
 
   // About link clicked:
@@ -191,6 +197,7 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.cardBookNowClicked = false;
     this.displaySevice.showContactUs = false;
     this.displaySevice.showAboutUs = true;
+    this.displaySevice.myBookingsClicked = false;
   }
 
   // Contact us link clicked:
@@ -201,6 +208,7 @@ export class LayoutComponent implements OnInit {
     this.displaySevice.cardBookNowClicked = false;
     this.displaySevice.showAboutUs = false;
     this.displaySevice.showContactUs = true;
+    this.displaySevice.myBookingsClicked = false;
   }
 
   // Calculate number of days
@@ -217,6 +225,16 @@ export class LayoutComponent implements OnInit {
     const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
   
     return differenceInDays;
+  }
+
+  onMyBookingsClick(){
+    this.displaySevice.showSearchBar = false;
+    this.displaySevice.homeClicked = false;
+    this.displaySevice.searchClicked = false;
+    this.displaySevice.cardBookNowClicked  = false;
+    this.displaySevice.showAboutUs = false;
+    this.displaySevice.showContactUs = false;
+    this.displaySevice.myBookingsClicked = true;
   }
   
 

@@ -80,7 +80,7 @@ export class LoginComponent {
       next: response => {
         console.log('Login successful', response);
         this.alertClass = 'alert-success';  // Green alert
-        this.alertText = 'Log in successful!';
+        this.alertText = 'Log in successful! Please close this log in window.';
         this.showLoginSuccessAlert = true;  // Show the alert on success
         this.displayService.isLoggedIn = true;
         this.fetchUsername();

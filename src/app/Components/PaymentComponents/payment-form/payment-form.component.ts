@@ -26,6 +26,7 @@ export class PaymentFormComponent implements OnInit, CanComponentDeactivate   {
   }
 
   onSubmit(){
+    this.displayService.fullName = this.fname + " " + this.lname;
     this.displayService.currentEmail = this.email;
   }
 

@@ -9,6 +9,7 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { HotelDescriptionComponent } from './Components/hotel-description/hotel-description.component';
 import { CanActivateGuard } from './guards/can-activate.guard';
 import { CanDeactivateGuard } from './guards/can-deactivate.guard';
+import { MyBookingsComponent } from './Components/my-bookings/my-bookings.component';
 
 const routes: Routes = [
   { path: 'paymentform', component: PaymentFormComponent, canDeactivate: [CanDeactivateGuard]},

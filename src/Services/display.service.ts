@@ -8,13 +8,18 @@ export class DisplayService {
   public homeClicked = true;
   public searchClicked = false;
   public cardBookNowClicked = false;
+  public myBookingsClicked = false;
 
   public selectedHotelID = 0;
 
   public isLoggedIn = false;
   public currentUser = '';
+  public fullName = '';
   public currentPhone = '';
   public currentEmail = '';
+  public checkInDate = '';
+  public checkOutDate = '';
+  public n_guests = 1;
   public n_days = 0;
   public nRoomsBooked = 0;
   public finalPrice = 0;
